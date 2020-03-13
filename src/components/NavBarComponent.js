@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Navbar, NavbarBrand, NavbarText, Nav, NavItem, Collapse, NavbarToggler} from 'reactstrap';
+import {Navbar, NavbarBrand, Nav, NavItem, Collapse, NavbarToggler} from 'reactstrap';
 import {NavLink} from 'react-router-dom'
 
 class NavBarComponent extends Component {
@@ -18,24 +18,21 @@ class NavBarComponent extends Component {
 	}
 	render() {
 		return (
-			<Navbar dark expand ="md" color="danger">
-				<div className="container">
-					<NavbarToggler onClick={this.toggleNavbar} navbar/>
-					<NavbarBrand href="/">
-						<img src = "images/download.png"/>
+			<div>
+				<Navbar dark color="danger">
+					<NavbarToggler className="mr-auto" onClick={this.toggleNavbar} navbar/>
+					<NavbarBrand className="center" href="/">
+						<img src = "images/download.png" alt = "download"/>
 					</NavbarBrand>
 					<Collapse isOpen ={this.state.isNavOpen} navbar>
 						<Nav className="mr-auto" navbar >
-							<NavItem>
-								<NavLink className="nav-link" to = "/contactus"><span className="fa fa-address-book fa-lg"></span>Contact Us</NavLink>
-							</NavItem>
-							<NavItem>
-								<NavLink className="nav-link" to = "/aboutus"><span className="fa fa-info fa-lg"></span>About Us</NavLink>
+							<NavItem className="mr-2">
+								<NavLink className="nav-link" to = "/catagories"><span className="fa fa-info fa-lg"></span>Catagories</NavLink>
 							</NavItem>
 						</Nav>
 					</Collapse>
-				</div> 
-			</Navbar>
+				</Navbar>
+			</div> 
 		);
 	}
 }
